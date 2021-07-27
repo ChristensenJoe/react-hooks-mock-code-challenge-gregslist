@@ -1,7 +1,8 @@
 import React from "react";
 import Search from "./Search";
+import Sort from "./Sort";
 
-function Header() {
+function Header({onSearchChange, search, isSorted, setIsSorted}) {
   return (
     <header>
       <h1>
@@ -10,7 +11,14 @@ function Header() {
         </span>
         gregslist
       </h1>
-      <Search />
+      <Search 
+        onSearchChange={onSearchChange}
+        search={search}
+      />
+      <Sort 
+        isSorted={isSorted}
+        setIsSorted={setIsSorted}
+      />
     </header>
   );
 }
